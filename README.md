@@ -456,17 +456,4 @@ If it displays correctly, run:
 
 ```bash
 
-git add README.md
-
-git commit -m "Add professional project README"
-
-git push
-
-```
-
-
-
-After that, your GitHub repository will have the README properly uploaded.
-
-
 
