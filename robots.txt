@@ -1,0 +1,6 @@
+# Horizon Properties
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+
+Sitemap: https://horizonproperties.example.com/sitemap.xml

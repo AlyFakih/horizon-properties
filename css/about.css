@@ -1,0 +1,696 @@
+/* 
+* Horizon Properties - About Page Stylesheet
+* This stylesheet contains specific styling for the about page.
+*/
+
+/* ============= PAGE HEADER ============= */
+
+.about-header {
+    background-image: linear-gradient(135deg, #0A2342 0%, #143a66 100%);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 260px;
+    color: #fff;
+}
+.about-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10, 35, 66, 0.7); /* Deep navy overlay */
+    z-index: 1;
+    border-radius: 0 0 32px 32px;
+}
+.about-header .container,
+.about-header .page-header-content,
+.about-header h1,
+.about-header .breadcrumbs {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+.about-header .breadcrumbs a {
+    color: #F5A623;
+}
+.about-header .breadcrumbs .current {
+    color: #fff;
+}
+
+/* ============= COMPANY STORY ============= */
+
+.company-story {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.story-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--card-shadow);
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.story-image:hover img {
+    transform: scale(1.03);
+}
+
+.story-text h2 {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.story-text h2:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    bottom: -10px;
+    left: 0;
+}
+
+.story-text .lead {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.mission-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.mission-box {
+    background-color: var(--light-gray);
+    padding: 35px 30px;
+    border-radius: var(--border-radius-lg);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.mission-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow);
+}
+
+.mission-box h3 {
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.mission-box h3:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    bottom: 0;
+    left: 0;
+}
+
+.mission-box p {
+    line-height: 1.7;
+}
+
+.mission-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mission-box ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.mission-box ul li span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ============= COMPANY TIMELINE ============= */
+
+/* Scroll-reveal only. The timeline's layout (rail, dots, alternating cards) is
+   defined once, below. An earlier duplicate here re-declared .timeline,
+   .timeline-item, .timeline-dot, .timeline-content and .timeline-year with a
+   different left-rail design; the properties the second block did not happen to
+   override leaked through and drew a second gold rail, an oversized dot and a
+   16px offset that broke the 50% alternating maths. */
+.timeline-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(.77,0,.175,1), transform 0.7s cubic-bezier(.77,0,.175,1);
+}
+
+.timeline-item.timeline-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timeline-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+.company-timeline {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 60px auto 0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--primary-color);
+    left: calc(50% - 1px);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    top: 20px;
+    left: calc(50% - 10px);
+    z-index: 1;
+    box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.2);
+}
+
+.timeline-content {
+    position: relative;
+    width: calc(50% - 40px);
+    padding: 25px;
+    background-color: var(--white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--card-shadow);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    left: calc(50% + 40px);
+}
+
+.timeline-year {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.timeline-content h3 {
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+    color: var(--dark-gray);
+}
+
+/* Arrow pointing to the timeline */
+.timeline-item:nth-child(odd) .timeline-content:after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--white);
+}
+
+.timeline-item:nth-child(even) .timeline-content:after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid var(--white);
+}
+
+/* ============= TEAM SECTION ============= */
+
+.team-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.team-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.team-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--dark-gray);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.team-member {
+    display: flex;
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-medium);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-image {
+    width: 35%;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.member-details {
+    width: 65%;
+    padding: 25px;
+}
+
+.member-details h3 {
+    margin-bottom: 5px;
+}
+
+.member-position {
+    color: var(--gold-text);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.member-bio {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+.member-contact {
+    display: flex;
+    gap: 15px;
+}
+
+.member-contact a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transition: all var(--transition-fast);
+}
+
+.member-contact a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.team-cta {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* ============= OFFICE LOCATIONS ============= */
+
+.office-locations {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+/* The office locations map image was never supplied with the project and
+   its five absolutely-positioned pins had no target, so both were removed.
+   Every office is still listed in full in .locations-grid below. */
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.location-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-medium);
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+}
+
+.location-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.location-address {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.location-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.location-contact span,
+.location-hours {
+    display: flex;
+    align-items: center;
+    color: var(--dark-gray);
+}
+
+.location-contact i,
+.location-hours i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+/* ============= AWARDS & RECOGNITION ============= */
+
+.awards-section {
+    background: #fff7eb;
+    padding: 80px 0 60px 0;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.award-item {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius-lg);
+    transition: transform var(--transition-medium);
+}
+
+.award-item:hover {
+    transform: translateY(-5px);
+}
+
+.award-item img {
+    height: 80px;
+    margin: 0 auto 20px;
+}
+
+.award-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.award-item p {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+.associations {
+    text-align: center;
+}
+
+.associations h3 {
+    margin-bottom: 30px;
+}
+
+.associations-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.associations-grid img {
+    height: 60px;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.associations-grid img:hover {
+    opacity: 1;
+}
+
+/* ============= RESPONSIVE STYLES ============= */
+
+@media (max-width: 992px) {
+    .story-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .mission-values {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline:before {
+        left: 40px;
+    }
+    
+    .timeline-dot {
+        left: 40px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 80px);
+        margin-left: 80px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content:after,
+    .timeline-item:nth-child(even) .timeline-content:after {
+        left: -10px;
+        border-right: 10px solid var(--white);
+        border-left: none;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column;
+    }
+    
+    .member-image {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .member-details {
+        width: 100%;
+    }
+    
+    .locations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .awards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .awards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .associations-grid {
+        gap: 20px;
+    }
+    
+    .associations-grid img {
+        height: 50px;
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode .company-story,
+body.dark-mode .team-section {
+    background-color: #121212;
+}
+
+body.dark-mode .company-timeline,
+body.dark-mode .office-locations {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .mission-box,
+body.dark-mode .award-item {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .timeline-content,
+body.dark-mode .team-member,
+body.dark-mode .location-card {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .timeline-item:nth-child(odd) .timeline-content:after,
+body.dark-mode .timeline-item:nth-child(even) .timeline-content:after {
+    border-right-color: #1e1e1e;
+}
+
+body.dark-mode .timeline-item:nth-child(odd) .timeline-content:after {
+    border-left-color: #1e1e1e;
+}
+
+body.dark-mode .member-position {
+    color: var(--gold-text);
+}
+
+body.dark-mode .member-bio,
+body.dark-mode .team-intro p,
+body.dark-mode .location-contact span,
+body.dark-mode .location-hours,
+body.dark-mode .award-item p {
+    color: #aaa;
+}
+
+/* ============= AWARDS & AFFILIATIONS (typographic) ============= */
+
+/* The award and association artwork was never delivered with the project.
+   Rather than ship broken <img> tags or invent third-party logos, both are
+   rendered as type and CSS. */
+
+.award-medal {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.9rem;
+    color: var(--secondary-color);
+    background: linear-gradient(145deg, #0A2342 0%, #17457c 100%);
+    box-shadow: 0 6px 18px rgba(10, 35, 66, 0.18);
+}
+
+.associations-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+}
+
+.association-badge {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    max-width: 220px;
+    padding: 16px 22px;
+    border: 1px solid rgba(10, 35, 66, 0.18);
+    border-radius: var(--border-radius-md);
+    background-color: var(--white);
+    color: var(--primary-color);
+    font-family: var(--button-font);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.5;
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.association-badge:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+body.dark-mode .association-badge {
+    background-color: #1e1e1e;
+    color: #e8e8e8;
+    border-color: #3a3a3a;
+}
+
+@media (max-width: 576px) {
+    .association-badge {
+        max-width: 100%;
+        width: 100%;
+    }
+}

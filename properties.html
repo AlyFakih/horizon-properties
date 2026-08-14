@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties for Sale | Horizon Properties</title>
+    <meta name="description" content="Search our full portfolio of premium properties. Filter by location, type, price, bedrooms, bathrooms and features to find your next home.">
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://horizonproperties.example.com/properties.html">
+    <meta name="theme-color" content="#0A2342">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Horizon Properties">
+    <meta property="og:title" content="Properties for Sale | Horizon Properties">
+    <meta property="og:description" content="Search our full portfolio of premium properties. Filter by location, type, price, bedrooms, bathrooms and features to find your next home.">
+    <meta property="og:url" content="https://horizonproperties.example.com/properties.html">
+    <meta property="og:image" content="https://horizonproperties.example.com/assets/images/Modern-Downtown-Penthouse.webp">
+    <meta property="og:image:alt" content="Horizon Properties luxury real estate">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Properties for Sale | Horizon Properties">
+    <meta name="twitter:description" content="Search our full portfolio of premium properties. Filter by location, type, price, bedrooms, bathrooms and features to find your next home.">
+    <meta name="twitter:image" content="https://horizonproperties.example.com/assets/images/Modern-Downtown-Penthouse.webp">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://horizonproperties.example.com/index.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Properties",
+                "item": "https://horizonproperties.example.com/properties.html"
+            }
+        ]
+    }
+    </script>
+    <!-- /SEO -->
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/properties.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <!-- Navigation Bar -->
+    <header class="navbar-container scrolled">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fa-solid fa-house-chimney" aria-hidden="true"></i>
+                    <span>Horizon Properties</span>
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html" class="active">Properties</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="agents.html">Agents</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <span class="phone"><i class="fa-solid fa-phone" aria-hidden="true"></i> (555) 123-4567</span>
+                <a href="contact.html" class="btn btn-primary">Book a Showing</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <!-- Page Header -->
+        <section class="page-header properties-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1>Our Premium Properties</h1>
+                    <div class="breadcrumbs">
+                        <a href="index.html">Home</a>
+                        <span class="separator">/</span>
+                        <span class="current">Properties</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Properties Filter and List Section -->
+        <section class="properties-section">
+            <div class="container">
+                <div class="properties-container">
+                    <!-- Filter Sidebar -->
+                    <div class="filter-sidebar">
+                        <h2>Find Your Dream Property</h2>
+                        <form class="filter-form">
+                            <div class="filter-group">
+                                <label for="filter-location">Location</label>
+                                <select id="filter-location" name="location">
+                                    <option value="" selected>Any Location</option>
+                                    <option value="downtown">Downtown</option>
+                                    <option value="suburbs">Suburbs</option>
+                                    <option value="beachfront">Beachfront</option>
+                                    <option value="countryside">Countryside</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="filter-type">Property Type</label>
+                                <select id="filter-type" name="property-type">
+                                    <option value="" selected>Any Type</option>
+                                    <option value="house">House</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="condo">Condo</option>
+                                    <option value="villa">Villa</option>
+                                    <option value="commercial">Commercial</option>
+                                </select>
+                            </div>
+
+                            <fieldset class="filter-group price-filter">
+                                <legend>Price Range</legend>
+                                <div class="price-slider-container">
+                                    <p class="price-values" role="status" aria-live="polite">
+                                        <span id="price-min">$0</span>
+                                        <span id="price-max">$5M+</span>
+                                    </p>
+                                    <div class="price-slider">
+                                        <label class="visually-hidden" for="price-min-slider">Minimum price</label>
+                                        <input type="range" min="0" max="5" value="0" step="1" class="slider" id="price-min-slider">
+                                        <label class="visually-hidden" for="price-max-slider">Maximum price</label>
+                                        <input type="range" min="0" max="5" value="5" step="1" class="slider" id="price-max-slider">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="filter-group">
+                                <label for="filter-bedrooms">Bedrooms</label>
+                                <select id="filter-bedrooms" name="bedrooms">
+                                    <option value="" selected>Any</option>
+                                    <option value="1+">1+</option>
+                                    <option value="2+">2+</option>
+                                    <option value="3+">3+</option>
+                                    <option value="4+">4+</option>
+                                    <option value="5+">5+</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="filter-bathrooms">Bathrooms</label>
+                                <select id="filter-bathrooms" name="bathrooms">
+                                    <option value="" selected>Any</option>
+                                    <option value="1+">1+</option>
+                                    <option value="2+">2+</option>
+                                    <option value="3+">3+</option>
+                                    <option value="4+">4+</option>
+                                    <option value="5+">5+</option>
+                                </select>
+                            </div>
+
+                            <fieldset class="filter-group">
+                                <legend>Additional Features</legend>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="feature-pool" name="features" value="pool">
+                                        <label for="feature-pool">Swimming Pool</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="feature-garden" name="features" value="garden">
+                                        <label for="feature-garden">Garden</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="feature-garage" name="features" value="garage">
+                                        <label for="feature-garage">Garage</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="feature-balcony" name="features" value="balcony">
+                                        <label for="feature-balcony">Balcony</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="feature-waterfront" name="features" value="waterfront">
+                                        <label for="feature-waterfront">Waterfront</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="feature-gym" name="features" value="gym">
+                                        <label for="feature-gym">Gym</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <button type="submit" class="btn btn-primary">Apply Filters</button>
+                            <button type="reset" class="btn btn-outline">Reset Filters</button>
+                        </form>
+                    </div>
+
+                    <!-- Properties Listing -->
+                    <div class="properties-listing">
+                        <div class="properties-header">
+                            <p class="properties-count" role="status" aria-live="polite">
+                                <span>Showing 9 properties</span>
+                            </p>
+                            <div class="properties-sort">
+                                <label for="sort-options">Sort by:</label>
+                                <select id="sort-options">
+                                    <option value="newest">Newest</option>
+                                    <option value="price-asc">Price (Low to High)</option>
+                                    <option value="price-desc">Price (High to Low)</option>
+                                    <option value="size-asc">Size (Small to Large)</option>
+                                    <option value="size-desc">Size (Large to Small)</option>
+                                </select>
+                            </div>
+                            <div class="view-options" role="group" aria-label="Result layout">
+                                <button class="view-option-btn active" type="button" data-view="grid" aria-pressed="true" aria-label="Grid view">
+                                    <i class="fa-solid fa-grip" aria-hidden="true"></i>
+                                </button>
+                                <button class="view-option-btn" type="button" data-view="list" aria-pressed="false" aria-label="List view">
+                                    <i class="fa-solid fa-list" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="properties-grid">
+                            <!-- Luxury Beachfront Villa -->
+                            <article class="property-card" data-property-id="luxury-beachfront-villa">
+                                <div class="property-image">
+                                    <img src="assets/images/Luxury-Beachfront-Villa.webp" alt="Beachfront villa seen from the shoreline at dusk" width="800" height="600" loading="eager" fetchpriority="high" decoding="async">
+                                    <div class="property-badge">Featured</div>
+                                    <button class="property-favorite" type="button" aria-pressed="false" aria-label="Save Luxury Beachfront Villa to favorites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="property-details">
+                                    <h3><a href="property-single.html?id=luxury-beachfront-villa">Luxury Beachfront Villa</a></h3>
+                                    <p class="property-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Oceanview Dr, Malibu, CA</p>
+                                    <p class="property-price">$4,500,000</p>
+                                    <div class="property-features">
+                                        <span><i class="fa-solid fa-bed" aria-hidden="true"></i> 5 Beds</span>
+                                        <span><i class="fa-solid fa-bath" aria-hidden="true"></i> 6 Baths</span>
+                                        <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> 4,500 sqft</span>
+                                    </div>
+                                    <a href="property-single.html?id=luxury-beachfront-villa" class="btn btn-secondary" aria-label="View details for Luxury Beachfront Villa">View Details</a>
+                                </div>
+                            </article>
+
+                            <!-- Modern Downtown Penthouse -->
+                            <article class="property-card" data-property-id="modern-downtown-penthouse">
+                                <div class="property-image">
+                                    <img src="assets/images/Modern-Downtown-Penthouse.webp" alt="Penthouse living space with skyline views" width="800" height="600" loading="lazy" decoding="async">
+                                    <div class="property-badge">New</div>
+                                    <button class="property-favorite" type="button" aria-pressed="false" aria-label="Save Modern Downtown Penthouse to favorites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="property-details">
+                                    <h3><a href="property-single.html?id=modern-downtown-penthouse">Modern Downtown Penthouse</a></h3>
+                                    <p class="property-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 789 Skyline Ave, New York, NY</p>
+                                    <p class="property-price">$2,850,000</p>
+                                    <div class="property-features">
+                                        <span><i class="fa-solid fa-bed" aria-hidden="true"></i> 3 Beds</span>
+                                        <span><i class="fa-solid fa-bath" aria-hidden="true"></i> 3.5 Baths</span>
+                                        <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> 2,200 sqft</span>
+                                    </div>
+                                    <a href="property-single.html?id=modern-downtown-penthouse" class="btn btn-secondary" aria-label="View details for Modern Downtown Penthouse">View Details</a>
+                                </div>
+                            </article>
+
+                            <!-- Classic Suburban Estate -->
+                            <article class="property-card" data-property-id="classic-suburban-estate">
+                                <div class="property-image">
+                                    <img src="assets/images/Classic-Suburban-Estate.webp" alt="Estate frontage with mature planting" width="800" height="600" loading="lazy" decoding="async">
+                                    <button class="property-favorite" type="button" aria-pressed="false" aria-label="Save Classic Suburban Estate to favorites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="property-details">
+                                    <h3><a href="property-single.html?id=classic-suburban-estate">Classic Suburban Estate</a></h3>
+                                    <p class="property-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 456 Maple Lane, Greenwich, CT</p>
+                                    <p class="property-price">$3,200,000</p>
+                                    <div class="property-features">
+                                        <span><i class="fa-solid fa-bed" aria-hidden="true"></i> 6 Beds</span>
+                                        <span><i class="fa-solid fa-bath" aria-hidden="true"></i> 5 Baths</span>
+                                        <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> 5,800 sqft</span>
+                                    </div>
+                                    <a href="property-single.html?id=classic-suburban-estate" class="btn btn-secondary" aria-label="View details for Classic Suburban Estate">View Details</a>
+                                </div>
+                            </article>
+
+                            <!-- Mountain View Retreat -->
+                            <article class="property-card" data-property-id="mountain-view-retreat">
+                                <div class="property-image">
+                                    <img src="assets/images/Mountain-View-Retreat.webp" alt="Mountain house with panoramic range views" width="800" height="600" loading="lazy" decoding="async">
+                                    <button class="property-favorite" type="button" aria-pressed="false" aria-label="Save Mountain View Retreat to favorites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="property-details">
+                                    <h3><a href="property-single.html?id=mountain-view-retreat">Mountain View Retreat</a></h3>
+                                    <p class="property-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 890 Highland Rd, Aspen, CO</p>
+                                    <p class="property-price">$5,750,000</p>
+                                    <div class="property-features">
+                                        <span><i class="fa-solid fa-bed" aria-hidden="true"></i> 4 Beds</span>
+                                        <span><i class="fa-solid fa-bath" aria-hidden="true"></i> 4.5 Baths</span>
+                                        <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> 3,900 sqft</span>
+                                    </div>
+                                    <a href="property-single.html?id=mountain-view-retreat" class="btn btn-secondary" aria-label="View details for Mountain View Retreat">View Details</a>
+                                </div>
+                            </article>
+
+                            <!-- Urban Loft Apartment -->
+                            <article class="property-card" data-property-id="urban-loft-apartment">
+                                <div class="property-image">
+                                    <img src="assets/images/Urban-Loft-Apartment.webp" alt="Loft interior with exposed brick and steel" width="800" height="600" loading="lazy" decoding="async">
+                                    <div class="property-badge">Hot</div>
+                                    <button class="property-favorite" type="button" aria-pressed="false" aria-label="Save Urban Loft Apartment to favorites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="property-details">
+                                    <h3><a href="property-single.html?id=urban-loft-apartment">Urban Loft Apartment</a></h3>
+                                    <p class="property-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 567 Brick Lane, Chicago, IL</p>
+                                    <p class="property-price">$1,295,000</p>
+                                    <div class="property-features">
+                                        <span><i class="fa-solid fa-bed" aria-hidden="true"></i> 2 Beds</span>
+                                        <span><i class="fa-solid fa-bath" aria-hidden="true"></i> 2 Baths</span>
+                                        <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> 1,800 sqft</span>
+                                    </div>
+                                    <a href="property-single.html?id=urban-loft-apartment" class="btn btn-secondary" aria-label="View details for Urban Loft Apartment">View Details</a>
+                                </div>
+                            </article>
+
+                            <!-- Waterfront Contemporary Home -->
+                            <article class="property-card" data-property-id="waterfront-contemporary-home">
+                                <div class="property-image">
+                                    <img src="assets/images/Waterfront-Contemporary-Home.webp" alt="Waterfront house viewed from the dock" width="800" height="600" loading="lazy" decoding="async">
+                                    <button class="property-favorite" type="button" aria-pressed="false" aria-label="Save Waterfront Contemporary Home to favorites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="property-details">
+                                    <h3><a href="property-single.html?id=waterfront-contemporary-home">Waterfront Contemporary Home</a></h3>
+                                    <p class="property-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 234 Harbor Dr, Miami, FL</p>
+                                    <p class="property-price">$3,875,000</p>
+                                    <div class="property-features">
+                                        <span><i class="fa-solid fa-bed" aria-hidden="true"></i> 5 Beds</span>
+                                        <span><i class="fa-solid fa-bath" aria-hidden="true"></i> 5.5 Baths</span>
+                                        <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> 4,100 sqft</span>
+                                    </div>
+                                    <a href="property-single.html?id=waterfront-contemporary-home" class="btn btn-secondary" aria-label="View details for Waterfront Contemporary Home">View Details</a>
+                                </div>
+                            </article>
+
+                            <!-- Elegant City Townhouse -->
+                            <article class="property-card" data-property-id="elegant-city-townhouse">
+                                <div class="property-image">
+                                    <img src="assets/images/property7.webp" alt="Townhouse frontage on a tree-lined street" width="800" height="600" loading="lazy" decoding="async">
+                                    <button class="property-favorite" type="button" aria-pressed="false" aria-label="Save Elegant City Townhouse to favorites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="property-details">
+                                    <h3><a href="property-single.html?id=elegant-city-townhouse">Elegant City Townhouse</a></h3>
+                                    <p class="property-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 781 Park Avenue, Boston, MA</p>
+                                    <p class="property-price">$2,450,000</p>
+                                    <div class="property-features">
+                                        <span><i class="fa-solid fa-bed" aria-hidden="true"></i> 4 Beds</span>
+                                        <span><i class="fa-solid fa-bath" aria-hidden="true"></i> 3.5 Baths</span>
+                                        <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> 3,200 sqft</span>
+                                    </div>
+                                    <a href="property-single.html?id=elegant-city-townhouse" class="btn btn-secondary" aria-label="View details for Elegant City Townhouse">View Details</a>
+                                </div>
+                            </article>
+
+                            <!-- Modernist Desert Home -->
+                            <article class="property-card" data-property-id="modernist-desert-home">
+                                <div class="property-image">
+                                    <img src="assets/images/property8.webp" alt="Modernist desert house with lap pool" width="800" height="600" loading="lazy" decoding="async">
+                                    <div class="property-badge">New</div>
+                                    <button class="property-favorite" type="button" aria-pressed="false" aria-label="Save Modernist Desert Home to favorites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="property-details">
+                                    <h3><a href="property-single.html?id=modernist-desert-home">Modernist Desert Home</a></h3>
+                                    <p class="property-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 442 Canyon View, Palm Springs, CA</p>
+                                    <p class="property-price">$3,950,000</p>
+                                    <div class="property-features">
+                                        <span><i class="fa-solid fa-bed" aria-hidden="true"></i> 3 Beds</span>
+                                        <span><i class="fa-solid fa-bath" aria-hidden="true"></i> 4 Baths</span>
+                                        <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> 3,600 sqft</span>
+                                    </div>
+                                    <a href="property-single.html?id=modernist-desert-home" class="btn btn-secondary" aria-label="View details for Modernist Desert Home">View Details</a>
+                                </div>
+                            </article>
+
+                            <!-- Lakeside Family Home -->
+                            <article class="property-card" data-property-id="lakeside-family-home">
+                                <div class="property-image">
+                                    <img src="assets/images/property9.webp" alt="Lakeside family home among pines" width="800" height="600" loading="lazy" decoding="async">
+                                    <button class="property-favorite" type="button" aria-pressed="false" aria-label="Save Lakeside Family Home to favorites"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="property-details">
+                                    <h3><a href="property-single.html?id=lakeside-family-home">Lakeside Family Home</a></h3>
+                                    <p class="property-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 156 Shoreline Dr, Lake Tahoe, NV</p>
+                                    <p class="property-price">$2,890,000</p>
+                                    <div class="property-features">
+                                        <span><i class="fa-solid fa-bed" aria-hidden="true"></i> 5 Beds</span>
+                                        <span><i class="fa-solid fa-bath" aria-hidden="true"></i> 4 Baths</span>
+                                        <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> 4,200 sqft</span>
+                                    </div>
+                                    <a href="property-single.html?id=lakeside-family-home" class="btn btn-secondary" aria-label="View details for Lakeside Family Home">View Details</a>
+                                </div>
+                            </article>
+                            <!-- Empty state for no search results (hidden by default) -->
+                            <div class="no-results" id="noResults" hidden>
+                                <div class="no-results-icon">
+                                    <i class="fa-solid fa-house" aria-hidden="true"></i>
+                                </div>
+                                <h3>No properties match those filters</h3>
+                                <p>Try widening your price range, reducing the number of bedrooms, or clearing a feature or two.</p>
+                                <button class="btn btn-primary reset-search" type="button">Clear all filters</button>
+                            </div>
+                        </div>
+
+                        <nav class="pagination" id="pagination" aria-label="Property results pages" hidden></nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-house-chimney" aria-hidden="true"></i>
+                        <span>Horizon Properties</span>
+                    </div>
+                    <p class="footer-tagline">Elevating the real estate experience with exceptional service and premium properties.</p>
+                    <!-- No public social accounts yet. When they exist, swap these for
+                             <a href="https://..." target="_blank" rel="noopener"> links. -->
+                        <div class="social-icons">
+                            <a href="mailto:info@horizonproperties.com" aria-label="Email Horizon Properties" title="Email us"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                            <a href="tel:+15551234567" aria-label="Call Horizon Properties" title="Call us"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
+                            <a href="https://wa.me/15551234567" target="_blank" rel="noopener" aria-label="Message Horizon Properties on WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+                        </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="agents.html">Agents</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest property listings and real estate news.</p>
+                    <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="newsletter-bot">
+                        <input type="hidden" name="form-name" value="newsletter">
+                        <p class="hidden-field"><label>Skip this field:<input name="newsletter-bot" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Spam protection"></label></p>
+                        <label class="visually-hidden" for="newsletter-email">Email address</label>
+                        <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Luxury Lane, Suite 500, New York, NY 10001</li>
+                        <li><i class="fa-solid fa-phone" aria-hidden="true"></i> (555) 123-4567</li>
+                        <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@horizonproperties.com</li>
+                        <li><i class="fa-solid fa-clock" aria-hidden="true"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Horizon Properties. All rights reserved.</p>
+                <a href="#" class="back-to-top">Back to Top <i class="fa-solid fa-chevron-up" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/properties-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,717 @@
+/* 
+* Horizon Properties - Properties Page Stylesheet
+* This stylesheet contains specific styling for the properties listing page.
+*/
+
+/* ============= PAGE HEADER ============= */
+
+/* .page-header, .page-header-content and .breadcrumbs now live in styles.css so
+   every sub-page shares them. Only the artwork is page-specific.
+   The gradient is a second background layer, so the header still renders
+   correctly if the photograph fails to load. */
+.properties-header {
+    background-image: linear-gradient(135deg, #0A2342 0%, #143a66 100%);
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7));
+}
+
+.page-header h1 {
+    color: var(--white);
+    margin-bottom: 10px;
+    font-size: 3rem;
+}
+
+/* ============= PROPERTIES SECTION ============= */
+
+.properties-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.properties-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+}
+
+/* ============= FILTER SIDEBAR ============= */
+
+.no-properties-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0A2342;
+    background: #fff7eb;
+    border: 1.5px solid #F5A62333;
+    border-radius: 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    padding: 48px 18px 40px 18px;
+    margin: 36px 0 32px 0;
+    box-shadow: 0 2px 16px rgba(10,35,66,0.05);
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+}
+.no-properties-message i {
+    font-size: 2.7rem;
+    color: var(--gold-text);
+    margin-bottom: 18px;
+}
+.no-properties-message span {
+    display: block;
+    margin-top: 0;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+@media (max-width: 600px) {
+    .no-properties-message {
+        font-size: 1.05rem;
+        padding: 32px 8px 28px 8px;
+    }
+    .no-properties-message i {
+        font-size: 2rem;
+    }
+}
+
+
+.filter-sidebar {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(10,35,66,0.10), 0 1.5px 6px rgba(245,166,35,0.08);
+    align-self: start;
+    position: sticky;
+    top: 96px;
+    z-index: 10;
+    transition: box-shadow 0.3s, top 0.3s;
+}
+
+@media (max-width: 900px) {
+    .properties-container {
+        grid-template-columns: 1fr;
+    }
+    .filter-sidebar {
+        position: static;
+        width: 100%;
+        margin-bottom: 28px;
+        box-shadow: 0 4px 16px rgba(10,35,66,0.07);
+    }
+}
+
+.filter-sidebar h3 {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-group {
+    margin-bottom: 5px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.filter-group select,
+.filter-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--white);
+    color: var(--charcoal);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 12l-6-6h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.filter-group select:focus,
+.filter-group input[type="text"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.price-slider-container {
+    margin-top: 10px;
+}
+
+.price-values {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.price-slider {
+    position: relative;
+    margin: 0 10px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+    pointer-events: auto;
+    border: 2px solid var(--white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+    pointer-events: auto;
+    border: 2px solid var(--white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.slider:focus {
+    outline: none;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--secondary-color);
+}
+
+.checkbox-item label {
+    margin-bottom: 0;
+    font-weight: 400;
+    color: var(--charcoal);
+    cursor: pointer;
+}
+
+.filter-form .btn {
+    margin-top: 10px;
+}
+
+.filter-form .btn-outline {
+    margin-top: 5px;
+    background-color: transparent;
+    color: var(--dark-gray);
+    border-color: var(--medium-gray);
+}
+
+.filter-form .btn-outline:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* ============= PROPERTIES LISTING ============= */
+
+.properties-listing {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Scoped to the listing toolbar. The page hero also carries the
+   .properties-header class, and inherited the white bar / space-between rules
+   from an unscoped selector here, which broke its centring and painted a white
+   panel behind the hero overlay. */
+.properties-listing .properties-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: var(--white);
+    padding: 15px 20px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--card-shadow);
+}
+
+.properties-count {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.properties-sort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.properties-sort label {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.properties-sort select {
+    padding: 8px 30px 8px 12px;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius-sm);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 12l-6-6h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    font-size: 0.9rem;
+}
+
+.view-options {
+    display: flex;
+    gap: 5px;
+}
+
+.view-option-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-gray);
+    background-color: var(--light-gray);
+    transition: all var(--transition-fast);
+}
+
+.view-option-btn:hover,
+.view-option-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* List view style */
+.properties-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+.properties-grid.list-view .property-card {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+
+.properties-grid.list-view .property-image {
+    width: 35%;
+    min-height: 100%;
+}
+
+.properties-grid.list-view .property-details {
+    width: 65%;
+}
+
+/* No results styles */
+.no-results {
+    grid-column: 1 / -1;
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+}
+
+.no-results-icon {
+    font-size: 3rem;
+    color: var(--medium-gray);
+    margin-bottom: 20px;
+}
+
+.no-results h3 {
+    margin-bottom: 15px;
+}
+
+.no-results p {
+    max-width: 500px;
+    margin: 0 auto 25px;
+    color: var(--dark-gray);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 40px;
+}
+
+.pagination a,
+.pagination span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--white);
+    color: var(--charcoal);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.pagination a:hover,
+.pagination a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.pagination .page-prev,
+.pagination .page-next {
+    width: auto;
+    padding: 0 15px;
+}
+
+.pagination .page-dots {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* ============= RESPONSIVE STYLES ============= */
+
+@media (max-width: 992px) {
+    .properties-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-sidebar {
+        position: static;
+    }
+    
+    /* The panel collapses behind a toggle on small screens. The open state is
+       driven by .is-open, which main.js sets; previously the only rule that
+       revealed the form keyed off a class nothing ever applied, so the entire
+       filter UI was unreachable below 992px. */
+    .filter-sidebar h3 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .filter-sidebar .filter-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+        font: inherit;
+        color: inherit;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .filter-sidebar .filter-toggle::after {
+        content: '\f078';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 0.8em;
+        transition: transform var(--transition-fast);
+    }
+
+    .filter-sidebar.is-open .filter-toggle::after {
+        transform: rotate(180deg);
+    }
+
+    .filter-form {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-medium);
+    }
+
+    .filter-sidebar.is-open .filter-form {
+        max-height: 1400px;
+        margin-top: 25px;
+        padding-top: 15px;
+        border-top: 1px solid var(--medium-gray);
+    }
+}
+
+@media (max-width: 768px) {
+    .properties-listing .properties-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .properties-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .properties-grid.list-view .property-card {
+        flex-direction: column;
+    }
+    
+    .properties-grid.list-view .property-image,
+    .properties-grid.list-view .property-details {
+        width: 100%;
+    }
+    
+    .filter-sidebar .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode .filter-sidebar,
+body.dark-mode .property-card,
+body.dark-mode .properties-header,
+body.dark-mode .pagination a {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-mode .filter-group label {
+    color: #f0f0f0;
+}
+
+body.dark-mode .filter-group select,
+body.dark-mode .filter-group input[type="text"],
+body.dark-mode .properties-sort select {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    border-color: #444;
+}
+
+body.dark-mode .properties-section {
+    background-color: #121212;
+}
+
+body.dark-mode .view-option-btn {
+    background-color: #2c2c2c;
+    color: #aaa;
+}
+
+body.dark-mode .view-option-btn:hover,
+body.dark-mode .view-option-btn.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+body.dark-mode .checkbox-item label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .no-results {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .no-results p {
+    color: #bbb;
+}
+
+body.dark-mode .pagination .page-dots {
+    color: #f0f0f0;
+}
+
+/* ============= LEGAL PAGES (privacy / terms) ============= */
+
+.legal-content {
+    padding: 70px 0 90px;
+    background-color: var(--white);
+}
+
+.legal-content .container {
+    max-width: 820px;
+}
+
+.legal-content h2 {
+    font-size: 1.7rem;
+    margin-top: 40px;
+    margin-bottom: 14px;
+}
+
+.legal-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.legal-content p {
+    line-height: 1.8;
+    color: var(--charcoal);
+}
+
+.legal-updated {
+    color: var(--dark-gray);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.legal-list {
+    list-style: disc;
+    padding-left: 22px;
+    margin-bottom: 20px;
+}
+
+.legal-list li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.legal-contact {
+    margin-top: 45px;
+    padding: 22px 26px;
+    background-color: var(--light-gray);
+    border-left: 4px solid var(--secondary-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.legal-contact a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+body.dark-mode .legal-content {
+    background-color: #121212;
+}
+
+body.dark-mode .legal-content p {
+    color: #ddd;
+}
+
+body.dark-mode .legal-contact {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .legal-contact a {
+    color: var(--secondary-color);
+}
+
+/* ============= PAGINATION (button-driven) ============= */
+
+/* Pagination is now generated by main.js as real <button> controls rather than
+   href="#" anchors, so the anchor rules above are extended to cover buttons. */
+.pagination button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--white);
+    color: var(--charcoal);
+    font-family: var(--button-font);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.pagination button:hover:not(:disabled),
+.pagination button.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.pagination button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+body.dark-mode .pagination button {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+/* ============= FILTER PANEL ============= */
+
+/* fieldset needs its browser chrome removed to match the other filter groups. */
+.filter-group {
+    border: none;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.filter-group legend {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 0;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.price-filter .price-values {
+    margin-bottom: 10px;
+}
+
+/* Two range inputs are stacked on one rail; the rail needs the height of a
+   thumb so neither input is clipped. */
+.price-slider {
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.price-slider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background-color: var(--medium-gray);
+    border-radius: 3px;
+}
+
+.slider {
+    height: 24px;
+    margin: 0;
+}
+
+.slider:focus-visible::-webkit-slider-thumb {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+body.dark-mode .filter-group legend {
+    color: #f0f0f0;
+}
